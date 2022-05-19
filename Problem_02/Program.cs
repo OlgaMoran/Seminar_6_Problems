@@ -5,10 +5,7 @@ void FillArray(int[,] matrix)
     int y = matrix.GetLength(1);
     for (int i = 0; i < x; i++)
     {
-        for (int j = 0; j < y; j++)
-        {
-            matrix[i, j] = new Random().Next(1, 6);
-        }
+        for (int j = 0; j < y; j++) matrix[i, j] = new Random().Next(1, 6);
     }
 }
 
@@ -18,15 +15,12 @@ void PrintArray(int[,] matrix)
     int y = matrix.GetLength(1);
     for (int i = 0; i < x; i++)
     {
-        for (int j = 0; j < y; j++)
-        {
-            System.Console.Write($"{matrix[i, j]} ");
-        }
+        for (int j = 0; j < y; j++) System.Console.Write($"{matrix[i, j]} ");
         System.Console.WriteLine();
     }
 }
 
-int[,] MatrMult(int[,] matr1, int[,] matr2)
+int[,] MatrixMultiplication(int[,] matr1, int[,] matr2)
 {
     int x = matr1.GetLength(0);
     int y = matr2.GetLength(1);
@@ -36,10 +30,7 @@ int[,] MatrMult(int[,] matr1, int[,] matr2)
     {
         for (int j = 0; j < y; j++)
         {
-            for (int k = 0; k < z; k++)
-            {
-                matr3[i, j] += matr1[i, k] * matr2[k, j];
-            }
+            for (int k = 0; k < z; k++) matr3[i, j] += matr1[i, k] * matr2[k, j];
         }
     }
     return matr3;
@@ -55,5 +46,4 @@ Console.WriteLine();
 FillArray(B);
 PrintArray(B);
 Console.WriteLine();
-C = MatrMult(A, B);
-PrintArray(C);
+PrintArray(MatrixMultiplication(A, B));

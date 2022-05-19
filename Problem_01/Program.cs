@@ -8,10 +8,11 @@ void FillArray(int[,] matrix)
     {
         for (int j = 0; j < y; j++)
         {
-            matrix[i, j] = new Random().Next(1, 6);
+            matrix[i, j] = new Random().Next(0, 10);
         }
     }
 }
+
 void PrintArray(int[,] matrix)
 {
     int x = matrix.GetLength(0);
@@ -25,9 +26,10 @@ void PrintArray(int[,] matrix)
         Console.WriteLine();
     }
 }
+
 void ElementFrequency(int[,] array)
 {
-    for (int comp = 1; comp < 9; comp++)
+    for (int comp = 0; comp <= 9; comp++)
     {
         int count = 0;
         for (int i = 0; i < array.GetLength(0); i++)
@@ -37,7 +39,11 @@ void ElementFrequency(int[,] array)
                 if (array[i, j] == comp) count++;
             }
         }
-        if (count != 0) System.Console.WriteLine($"{comp} occurs {count} times");
+        if (count != 0)
+        {
+            if (count == 1) System.Console.WriteLine($"{comp} occurs 1 time");
+            else System.Console.WriteLine($"{comp} occurs {count} times");
+        }
     }
 }
 
