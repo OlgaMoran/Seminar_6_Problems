@@ -20,9 +20,9 @@ void PrintArray(int[,] matrix)
     {
         for (int j = 0; j < y; j++)
         {
-            Console.Write($"{matrix[i, j]} ");
+            System.Console.Write($"{matrix[i, j]} ");
         }
-        Console.WriteLine();
+        System.Console.WriteLine();
     }
 }
 
