@@ -27,7 +27,7 @@ void PrintArray(int[,] matrix)
     }
 }
 
-void ElementFrequency(int[,] array)
+void ElementFrequencyForDigitsOnly(int[,] array)
 {
     for (int comp = 0; comp <= 9; comp++)
     {
@@ -51,4 +51,4 @@ int[,] matr = new int[3, 3];
 FillArray(matr);
 PrintArray(matr);
 Console.WriteLine();
-ElementFrequency(matr);
+ElementFrequencyForDigitsOnly(matr);
